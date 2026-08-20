@@ -1,0 +1,255 @@
+import svgPaths from "./svg-7lxzau4t91";
+
+function Group() {
+  return (
+    <div className="absolute inset-[12.5%]" data-name="Group">
+      <svg className="absolute block inset-0 size-full" fill="none" height="13.5" preserveAspectRatio="none" viewBox="0 0 13.5 13.5" width="13.5">
+        <g id="Group">
+          <g id="Group_2">
+            <path d={svgPaths.p3236b380} fill="black" id="Vector" />
+          </g>
+          <path d={svgPaths.p28c0aff0} fill="black" id="Vector_2" />
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+function Article() {
+  return (
+    <div className="overflow-clip relative shrink-0 size-[18px]" data-name="Article">
+      <Group />
+    </div>
+  );
+}
+
+function Frame4() {
+  return (
+    <a className="absolute bg-[#ecf6ff] content-stretch cursor-pointer flex h-[34px] items-center justify-center left-0 px-[14px] py-[3px] rounded-[6px] top-0 w-[35px]">
+      <div aria-hidden className="absolute border border-[#3581c4] border-solid inset-0 pointer-events-none rounded-[6px]" />
+      <Article />
+    </a>
+  );
+}
+
+function Pause() {
+  return (
+    <div className="relative shrink-0 size-[15px]" data-name="Pause">
+      <svg className="absolute block inset-0 size-full" fill="none" height="15" preserveAspectRatio="none" viewBox="0 0 15 15" width="15">
+        <g clipPath="url(#clip0_0_9)" id="Pause">
+          <g id="Vector" />
+          <path d={svgPaths.p3078c980} fill="black" id="Vector_2" />
+        </g>
+        <defs>
+          <clipPath id="clip0_0_9">
+            <rect fill="white" height="15" width="15" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  );
+}
+
+function Frame2() {
+  return (
+    <div className="absolute bg-white content-stretch flex gap-[2px] h-[34px] items-center justify-center left-[337px] px-[14px] py-[6px] rounded-[6px] top-0 w-[197px]">
+      <div aria-hidden className="absolute border-[#3581c4] border-[0.6px] border-solid inset-0 pointer-events-none rounded-[6px]" />
+      <Pause />
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[30px] not-italic relative shrink-0 text-[16px] text-black whitespace-nowrap">Pause suggestions</p>
+    </div>
+  );
+}
+
+function ContentCopy() {
+  return (
+    <div className="relative shrink-0 size-[18px]" data-name="Content copy">
+      <svg className="absolute block inset-0 size-full" fill="none" height="18" preserveAspectRatio="none" viewBox="0 0 18 18" width="18">
+        <g clipPath="url(#clip0_0_6)" id="Content copy">
+          <g id="Vector" />
+          <path d={svgPaths.p30afe100} fill="black" id="Vector_2" />
+        </g>
+        <defs>
+          <clipPath id="clip0_0_6">
+            <rect fill="white" height="18" width="18" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  );
+}
+
+function Frame3() {
+  return (
+    <div className="bg-white content-stretch flex h-[34px] items-center justify-center px-[14px] py-[6px] relative rounded-[6px] shrink-0 w-[35px]">
+      <div aria-hidden className="absolute border-[#3581c4] border-[0.6px] border-solid inset-0 pointer-events-none rounded-[6px]" />
+      <ContentCopy />
+    </div>
+  );
+}
+
+function Frame() {
+  return (
+    <div className="bg-[#2990ea] content-stretch flex h-[34px] items-center justify-center px-[14px] py-[6px] relative rounded-[6px] shrink-0 w-[105px]">
+      <div aria-hidden className="absolute border-[#3581c4] border-[0.6px] border-solid inset-0 pointer-events-none rounded-[6px]" />
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[30px] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap">Download</p>
+    </div>
+  );
+}
+
+function Frame7() {
+  return (
+    <div className="absolute content-stretch flex gap-[13px] items-center left-[718px] top-0">
+      <Frame3 />
+      <Frame />
+    </div>
+  );
+}
+
+function Frame8() {
+  return (
+    <div className="h-[34px] relative shrink-0 w-full">
+      <Frame4 />
+      <Frame2 />
+      <Frame7 />
+    </div>
+  );
+}
+
+function Frame6() {
+  return (
+    <div className="bg-white border border-[#b8b8b8] border-solid content-stretch flex flex-col items-start p-[100px] relative rounded-[5px] shrink-0 w-full">
+      <div className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[14px] w-full whitespace-pre-wrap">
+        <p className="leading-[26px] mb-0">
+          Reflection Essay on Emma by Jane Austen
+          <br aria-hidden />
+          <br aria-hidden />
+        </p>
+        <p className="leading-[26px] mb-0">Introduction</p>
+        <p className="leading-[26px] mb-0">{`Jane Austen's Emma, published in ___, is a novel that explores ____. The story follows ____. My initial response to the novel was ____. As I read the story, I found myself particularly interested in the theme of ____. The novel made me think about _____. Overall, I believe that Emma presents_____, particularly through its exploration of the themes of ______.`}</p>
+        <p className="leading-[26px] mb-0">​</p>
+        <p className="leading-[26px] mb-0">
+          {`The central story of Emma revolves around ____.  One part of the story that particularly stood out to me was ____. I found this significant because _____.`}
+          <br aria-hidden />
+          <br aria-hidden />
+        </p>
+        <p className="leading-[26px] mb-0">Theme 1: [Theme]</p>
+        <p className="leading-[26px] mb-0">
+          One of the central themes was _____ Austen explores this theme through _____. In particular, _____. This demonstrates that _____.
+          <br aria-hidden />
+          <br aria-hidden />
+        </p>
+        <p className="leading-[26px] mb-0">
+          {`Austen's treatment of this theme can be interpreted as _____. `}
+          <br aria-hidden />
+          <br aria-hidden />
+        </p>
+        <p className="leading-[26px] mb-0">Theme 2: [Theme]</p>
+        <p className="leading-[26px] mb-0">
+          Another important theme in the novel is _____. This becomes apparent through _____. The relationship between _____ and _____ illustrates_____. We see that _____.
+          <br aria-hidden />
+          <br aria-hidden />
+        </p>
+        <p className="leading-[26px] mb-0">
+          {`I interpreted this as _____. What particularly interested me was_____.  Austen appears to suggest that _____.`}
+          <br aria-hidden />
+          <br aria-hidden />
+        </p>
+        <p className="leading-[26px] mb-0">Theme 3: [Theme]</p>
+        <p className="leading-[26px] mb-0">{`A further theme that I found significant was _____.  Throughout the novel, _____. One example of this is _____. This is significant because _____.`}</p>
+        <p className="leading-[26px] mb-0">
+          {`I found myself questioning _____. In this sense, Austen's take on the theme of _____ can be understood as _____.`}
+          <br aria-hidden />
+          <br aria-hidden />
+          <br aria-hidden />
+        </p>
+        <p className="leading-[26px] mb-0">Critical Reflection on the Novel</p>
+        <p className="leading-[26px] mb-0">{`Although Emma was written in a very different social and historical context, I found _____ relevant to _____. `}</p>
+        <p className="leading-[26px] mb-0">
+          Overall, my interpretation of Emma changed from _____ to _____. The novel challenged my assumptions about _____ and made me reconsider _____.
+          <br aria-hidden />
+          <br aria-hidden />
+        </p>
+        <p className="leading-[26px] mb-0">Conclusion</p>
+        <p className="leading-[26px] mb-0">In conclusion, through characters and their relationships , Austen examines _____. My understanding of the novel developed as I considered _____.</p>
+        <p className="leading-[26px]">{`I found Emma particularly significant because _____. `}</p>
+      </div>
+    </div>
+  );
+}
+
+function Frame9() {
+  return (
+    <div className="absolute content-stretch flex flex-col gap-[12px] items-start left-[361px] top-[162px] w-[871px]">
+      <Frame8 />
+      <Frame6 />
+    </div>
+  );
+}
+
+function Frame11() {
+  return (
+    <div className="bg-white border border-[#b8b8b8] border-solid content-stretch flex h-[222px] items-start p-[20px] relative rounded-[5px] shrink-0 w-full">
+      <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Italic',sans-serif] font-normal h-full italic leading-[26px] min-w-px relative text-[#5f5f5f] text-[16px]">A reflection essay on the book ‘Emma’ by Jane Austen, critically analyzing the themes and story.</p>
+    </div>
+  );
+}
+
+function Frame5() {
+  return (
+    <a className="bg-white content-stretch cursor-pointer flex h-[28px] items-center justify-center px-[14px] py-[3px] relative rounded-[6px] shrink-0">
+      <div aria-hidden className="absolute border-[#3581c4] border-[0.6px] border-solid inset-0 pointer-events-none rounded-[6px]" />
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[30px] not-italic relative shrink-0 text-[14px] text-black text-left whitespace-nowrap">Clear</p>
+    </a>
+  );
+}
+
+function Restart() {
+  return (
+    <div className="relative shrink-0 size-[13px]" data-name="Restart">
+      <svg className="absolute block inset-0 size-full" fill="none" height="13" preserveAspectRatio="none" viewBox="0 0 13 13" width="13">
+        <g id="Restart">
+          <path d={svgPaths.p27390500} fill="black" id="Vector" />
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+function Frame1() {
+  return (
+    <div className="bg-white content-stretch flex gap-[4px] h-[28px] items-center justify-center pb-[2px] pt-[3px] px-[14px] relative rounded-[6px] shrink-0">
+      <div aria-hidden className="absolute border-[#3581c4] border-[0.6px] border-solid inset-0 pointer-events-none rounded-[6px]" />
+      <Restart />
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[30px] not-italic relative shrink-0 text-[14px] text-black whitespace-nowrap">Regenerate</p>
+    </div>
+  );
+}
+
+function Frame10() {
+  return (
+    <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
+      <Frame5 />
+      <Frame1 />
+    </div>
+  );
+}
+
+function Frame12() {
+  return (
+    <div className="absolute content-stretch flex flex-col gap-[13px] items-start left-[43px] top-[166px] w-[298px]">
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[30px] not-italic relative shrink-0 text-[16px] text-black w-full">Get a template to kickstart writing</p>
+      <Frame11 />
+      <Frame10 />
+    </div>
+  );
+}
+
+export default function TemplateGenerated() {
+  return (
+    <div className="bg-[#f7f7f7] relative size-full" data-name="Template generated">
+      <p className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold leading-[30px] left-[304px] not-italic text-[26px] text-black top-[92px] w-[231px]">{`Writing Assistant `}</p>
+      <Frame9 />
+      <Frame12 />
+    </div>
+  );
+}

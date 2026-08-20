@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Inter:Bold';
+  src: local('Inter Bold'), local('Inter-Bold');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter:Medium';
+  src: local('Inter Medium'), local('Inter-Medium');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter:Regular';
+  src: local('Inter Regular'), local('Inter');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter:Italic';
+  src: local('Inter Italic'), local('Inter-Italic');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Inter:Medium Italic';
+  src: local('Inter Medium Italic'), local('Inter-MediumItalic');
+  font-weight: 500;
+  font-style: italic;
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+.editor-highlight-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  padding: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 26px;
+  color: #5f5f5f;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.editor-highlight-layer .suggestion-span {
+  pointer-events: auto;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.editor-highlight-layer .suggestion-span:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.editor-textarea {
+  position: absolute;
+  inset: 0;
+  padding: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  font-style: italic;
+  color: transparent;
+  caret-color: #333;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.editor-textarea::placeholder {
+  color: #5f5f5f;
+  font-style: italic;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d0d0d0; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #b0b0b0; }
