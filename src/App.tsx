@@ -86,7 +86,7 @@ function XIcon({ size = 14 }: { size?: number }) {
 // ─── Gemini API ─────────────────────────────────────────────────────────────
 
 const GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent";
-const DEFAULT_API_KEY = "AQ.Ab8RN6IpHD5J4MDpaHS_NiMKlMvNUTgj-9VYT5AN_XvQHxrxEQ";
+const DEFAULT_API_KEY = "AQ.Ab8RN6K3JL2PQctkL-IttfH5bu7yphFVzXCPyT8T6-t0NKeGbg";
 
 async function geminiRequest(
   apiKey: string,
