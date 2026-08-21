@@ -601,7 +601,7 @@ export default function App() {
 
   // Template generation
   const handleGetTemplate = async () => {
-    if (!templatePrompt.trim() || !apiKey) return;
+    if (!templatePrompt.trim()) return;
     setTemplateLoading(true);
     setTemplateError("");
     try {
@@ -630,7 +630,7 @@ export default function App() {
   };
 
   const handleRegenerateTemplate = async () => {
-    if (!templatePrompt.trim() || !apiKey) return;
+    if (!templatePrompt.trim()) return;
     setTemplateGenerated(false);
     await handleGetTemplate();
   };
@@ -663,7 +663,7 @@ export default function App() {
       {showApiModal && (
         <ApiKeyModal
           onSave={handleSaveApiKey}
-          hasExisting={!!apiKey}
+          hasExisting={true}
           onClose={() => setShowApiModal(false)}
         />
       )}
