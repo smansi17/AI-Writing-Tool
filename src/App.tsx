@@ -85,62 +85,49 @@ function XIcon({ size = 14 }: { size?: number }) {
 
 // ─── Gemini API ─────────────────────────────────────────────────────────────
 
-const GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent";
-const DEFAULT_API_KEY = "AQ.Ab8RN6K3JL2PQctkL-IttfH5bu7yphFVzXCPyT8T6-t0NKeGbg";
-
 async function geminiRequest(
-  apiKey: string,
+  userApiKey: string,
   prompt: string,
   jsonMode = false,
   retries = 3
 ): Promise<string> {
-  const generationConfig: Record<string, unknown> = {
-    temperature: 0.5,
-    maxOutputTokens: 4096,
-  };
-  if (jsonMode) generationConfig.responseMimeType = "application/json";
-
-  const body = JSON.stringify({
-    contents: [{ parts: [{ text: prompt }] }],
-    generationConfig,
-  });
-
-  const auths = [
-    { url: `${GEMINI_BASE}?key=${apiKey}`, headers: { "Content-Type": "application/json" } },
-    { url: GEMINI_BASE, headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` } },
-  ];
+  const headers: Record<string, string> = { "Content-Type": "application/json" };
+  if (userApiKey.trim()) headers["x-api-key"] = userApiKey.trim();
 
   for (let attempt = 0; attempt <= retries; attempt++) {
-    for (const auth of auths) {
-      let res: Response;
-      try {
-        res = await fetch(auth.url, { method: "POST", headers: auth.headers, body });
-      } catch { continue; }
+    let res: Response;
+    try {
+      res = await fetch("/api/generate", {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ prompt, jsonMode }),
+      });
+    } catch { continue; }
 
-      if (res.ok) {
-        const data = await res.json() as {
-          candidates?: { content?: { parts?: { text?: string }[] } }[];
-        };
-        return data.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
-      }
-
-      const status = res.status;
-      const err = await res.json().catch(() => ({})) as { error?: { message?: string } };
-
-      if (status === 429 || status === 503 || status === 500) {
-        if (attempt < retries) {
-          const msg = err.error?.message ?? "";
-          const retryMatch = msg.match(/retry in ([\d.]+)s/i);
-          const waitMs = retryMatch ? Math.ceil(parseFloat(retryMatch[1])) * 1000 : 1200 * (attempt + 1);
-          await new Promise((r) => setTimeout(r, waitMs));
-          break;
-        }
-        if (status === 429) throw new Error("QUOTA_EXCEEDED");
-      }
-
-      // Only try next auth on 401/403, otherwise surface the real error
-      if (status !== 401 && status !== 403) throw new Error(err.error?.message ?? `HTTP ${status}`);
+    if (res.ok) {
+      const data = await res.json() as { text?: string };
+      return data.text ?? "";
     }
+
+    const status = res.status;
+    const err = await res.json().catch(() => ({})) as { error?: string };
+
+    if (status === 429) {
+      if (attempt < retries) {
+        await new Promise((r) => setTimeout(r, 1200 * (attempt + 1)));
+        continue;
+      }
+      throw new Error("QUOTA_EXCEEDED");
+    }
+
+    if (status === 503 || status === 500) {
+      if (attempt < retries) {
+        await new Promise((r) => setTimeout(r, 1200 * (attempt + 1)));
+        continue;
+      }
+    }
+
+    throw new Error(err.error ?? `HTTP ${status}`);
   }
 
   throw new Error("Request failed after retries");
@@ -437,7 +424,7 @@ function SuggestionTooltip({
 // ─── Main App ────────────────────────────────────────────────────────────────
 
 export default function App() {
-  const [apiKey, setApiKey] = useState<string>(() => localStorage.getItem("gemini_api_key") ?? DEFAULT_API_KEY);
+  const [apiKey, setApiKey] = useState<string>(() => localStorage.getItem("gemini_api_key") ?? "");
   const [showApiModal, setShowApiModal] = useState(false);
 
   const [text, setText] = useState("");
@@ -494,7 +481,7 @@ export default function App() {
       if (debounceRef.current) clearTimeout(debounceRef.current);
       debounceRef.current = setTimeout(async () => {
         if (!currentText.trim() || currentText.trim().split(/\s+/).length < 15) return;
-        if (paused || !apiKey) return;
+        if (paused) return;
         setSuggestionsLoading(true);
         setSuggestionsError("");
         try {
